@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Diário Online - Fiori Bazarello Caires (1562193)</title>
+        <script src="./scripts/data.js"></script>
+        <script src="./scripts/scripts.js"></script>
+        <script src="./scripts/table.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header class="dark-back default-padding"><a href="/"><h1>Diário Online</h1></a></header>
+        <main id="main-content" class="default-padding">
+
+            <form id="class-questions" onsubmit="SubmitClass(this); return false;">
+                <label>Quantas aulas durante a semana?</label>
+                <input min="1" max="5" type="number" value="3" name="classes" />
+                <label>Quantas avaliações no semestre?</label>
+                <input min="1" max="5" type="number" value="3" name="tests" />
+                <button type="submit">Registrar</button>
+            </form>
+
+            <div id="class-table-container">
+                <table id="class-table">
+                </table>
+            </div>
+
+        </main>
+        <footer class="dark-back default-padding">Fiori Bazarello Caires (1562193) - Todos os direitos reservados</footer>
+        <script>
+            window.onload = () => {
+                if (getClassData()) {
+                    RenderTable();
+                    hideById("class-questions");
+                    showById("class-table-container");
+                }
+            };
+        </script>
+    </body>
+</html>
