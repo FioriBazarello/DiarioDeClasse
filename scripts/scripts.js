@@ -32,12 +32,12 @@ function RenderStudentInfo() {
     
     let mediaContainer = createComponent("div", container);
     createComponent("h3", mediaContainer, "Média:");
-    createComponent("p", mediaContainer, student.media);
+    createComponent("p", mediaContainer, student.media ? student.media : "0");
     mediaContainer.setAttribute("class", "info-container");
     
     let absenceContainer = createComponent("div", container)
     createComponent("h3", absenceContainer, "Faltas:");
-    createComponent("p", absenceContainer, student.faltasTotais);
+    createComponent("p", absenceContainer, student.faltas.length ? student.faltas.length : "0");
     absenceContainer.setAttribute("class", "info-container");
     
     let status = getStatus(student);

@@ -76,8 +76,8 @@ function renderTableBody() {
             input.value = currentTest ? currentTest.note : 0;
         }
 
-        createComponent("td", line, student.media);
-        createComponent("td", line, student.faltas.length);
+        createComponent("td", line, student.media ? student.media : "0");
+        createComponent("td", line, student.faltas.length ? student.faltas.length : "0");
         createComponent("td", line, getStatusMessage(status));
         
         // Botão de detalhes
