@@ -6,6 +6,20 @@ body {
     margin: 0;
 }
 
+header {
+    position: fixed;
+    height: 80px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    padding-top: 120px !important;
+}
+
 #class-questions {
     display: flex;
     flex-direction: column;
@@ -34,6 +48,29 @@ body {
 
 .exam {
     color: orange;
+}
+
+#main-content {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#main-content h1 {
+    margin-top: 0;
+    border-bottom: 1px solid black;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+}
+
+.info-container h3 {
+    margin-right: 10px;
+}
+
+.info-container h3, .info-container p {
+    margin-top: 0;
 }
 
 footer {

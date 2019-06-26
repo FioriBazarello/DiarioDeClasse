@@ -20,20 +20,39 @@ function RenderStudentInfo() {
     let student = getStudentById(location.hash.replace("#", ""));
     let container = document.getElementById("main-content");
     
-    createComponent("h3", container, "Nome:");
-    createComponent("p", container, student.name);
+    let nameContainer = createComponent("div", container);
+    createComponent("h3", nameContainer, "Nome:");
+    createComponent("p", nameContainer, student.name);
+    nameContainer.setAttribute("class", "info-container");
     
-    createComponent("h3", container, "Prontuário:");
-    createComponent("p", container, student.id);
+    let prontContainer = createComponent("div", container);
+    createComponent("h3", prontContainer, "Prontuário:");
+    createComponent("p", prontContainer, student.id);
+    prontContainer.setAttribute("class", "info-container");
     
-    createComponent("h3", container, "Média:");
-    createComponent("p", container, student.media);
+    let mediaContainer = createComponent("div", container);
+    createComponent("h3", mediaContainer, "Média:");
+    createComponent("p", mediaContainer, student.media);
+    mediaContainer.setAttribute("class", "info-container");
     
-    createComponent("h3", container, "Faltas:");
-    createComponent("p", container, student.faltasTotais);
+    let absenceContainer = createComponent("div", container)
+    createComponent("h3", absenceContainer, "Faltas:");
+    createComponent("p", absenceContainer, student.faltasTotais);
+    absenceContainer.setAttribute("class", "info-container");
     
-    createComponent("h3", container, "Status:");
-    createComponent("p", container, getStatusMessage(getStatus(student)));
+    let status = getStatus(student);
+    let statusClass = "";
+    if (status !== "aproved" && status === "exam") {
+        statusClass = "exam";
+    }
+    else if (status !== "aproved" && status !== "exam") {
+        statusClass = "disapproved";
+    }
+    
+    let statusContainer = createComponent("div", container)
+    createComponent("h3", statusContainer, "Status:");
+    createComponent("p", statusContainer, getStatusMessage(getStatus(student)));
+    statusContainer.setAttribute("class", `info-container ${statusClass}`);
 }
 
 function createComponent(type, append, value) {

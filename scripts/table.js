@@ -164,7 +164,7 @@ function renderAuxLine(classes, tests) {
     // Células de faltas
     for (let i = 0; i < 19; i++) {
         for (let b = 0; b < classes; b++) {
-            createComponent("td", aux, i+1);
+            createComponent("td", aux, `S${i+1} A${b+1}`);
         }
     }
     
@@ -173,6 +173,7 @@ function renderAuxLine(classes, tests) {
         createComponent("td", aux, `T${i+1}`);
     }
 
+    createComponent("td", aux, " - ");
     createComponent("td", aux, " - ");
     createComponent("td", aux, " - ");
     createComponent("td", aux, " - ");
