@@ -83,7 +83,7 @@ function renderTableBody() {
         // Botão de detalhes
         let detailsCell = createComponent("td", line);
         let detailsLink = createComponent("a", detailsCell, "Ver Detalhes");
-        detailsLink.setAttribute("href", `/aluno.html#${student.id}`);
+        detailsLink.setAttribute("href", `aluno.html#${student.id}`);
 
         container.appendChild(line);
     }

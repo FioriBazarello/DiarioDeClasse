@@ -18,7 +18,7 @@ function SubmitClass(context) {
 
 function RenderStudentInfo() {
     let student = getStudentById(location.hash.replace("#", ""));
-    let container = document.getElementById("main-content");
+    let container = document.getElementById("main-student-content");
     
     let nameContainer = createComponent("div", container);
     createComponent("h3", nameContainer, "Nome:");
