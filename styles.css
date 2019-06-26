@@ -50,12 +50,12 @@ main {
     color: orange;
 }
 
-#main-content {
+#main-student-content {
     border: 1px solid black;
     padding: 10px;
 }
 
-#main-content h1 {
+#main-student-content h1 {
     margin-top: 0;
     border-bottom: 1px solid black;
 }
